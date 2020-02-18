@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stopwatch</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Promise">
+	<link rel="stylesheet" type="text/css" href="stopwatch.css">
+</head>
+<body>
+	<div id="baba">
+	<h1 class="every"  align="center"><span  id="hr">00</span>:<span id="min">00</span>:<span id="sec">00</span> <small id="mls">00</small></h1>
+
+	<div align="center">
+		<button id="lap" onclick="lap()">Lap</button>
+		<button id="start" onclick="stop()">Start</button>
+		<button id="pause" onclick="pause()">Pause</button>
+		<button id="reset" onclick="reset()">Reset</button>
+	</div>
+</div>
+	<div id="lapcontainer" style="max-height: 253px; overflow: auto; font-weight: bolder; font-family: arial"></div>
+
+	<script type="text/javascript">
+		var timing;
+		var laps = [];
+		function stop() {
+			ml =mls.innerHTML;
+			ml++;
+			if (ml > 99) {
+				ml = 0;
+				sec.innerHTML++;
+				if (sec.innerHTML<10) {
+					sec.innerHTML ='0'+ sec.innerHTML;
+				}
+
+				if (sec.innerHTML > 59) {
+					sec.innerHTML = 0;
+					min.innerHTML++;
+					if (min.innerHTML<10) {
+					min.innerHTML ='0'+ min.innerHTML;
+				}
+					if (min.innerHTML > 59) {
+						min.innerHTML = 0;
+						hr.innerHTML++;
+						if (hr.innerHTML<10) {
+					hr.innerHTML ='0'+ hr.innerHTML;
+				}
+					}
+				}
+			}
+			mls.innerHTML = ml;
+			timing=setTimeout(stop,10)
+		}
+		function pause() {
+			clearTimeout(timing);
+		}
+
+		function lap() {
+			let clap = hr.innerHTML + ':' + min.innerHTML + ':' + sec.innerHTML + '.' + mls.innerHTML;
+			laps.push(clap);
+			// lapcontainer.innerHTML +=clap + '<br>';
+			lapText = ''
+			for (var i = laps.length; i>0; i--) {
+				lapText += laps[i-1] + '<br>'
+			}
+
+        lapcontainer.innerHTML = lapText;
+
+		}
+
+		function reset() {
+			hr.innerHTML='00';
+			min.innerHTML='00';
+			sec.innerHTML='00';
+			mls.innerHTML='00';
+			clearTimeout(timing);
+			lapcontainer.innerHTML='';
+
+		}
+		
+
+	</script>
+</body>
+</html>

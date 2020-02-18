@@ -1,0 +1,80 @@
+body{
+	background-color: white;
+}
+/*#lap,#start,#pause*/
+#lap,#start,#pause,#reset{
+	padding: 12px;
+	margin-top: 3rem;
+	transition: all 1.5s ease;
+	width: 5rem;
+	background-color: white;
+}
+#hr,#min,#sec,#mls{
+			display: inline-block;
+			/*font-weight: bolder;*/
+		}
+#lap:hover{
+/*background-color: red;*/
+transition: scale(2);
+font-size: 15px;
+font-size: 15px;
+font-family: arial;
+font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#start:hover{
+background-color: #ccc;
+transition: scale(2);
+font-size: 15px;
+font-size: 15px;
+font-family: arial;
+font-weight: bolder;
+}
+#pause:hover{
+/*background-color: red;*/
+transition: scale(2);
+font-size: 15px;
+font-size: 15px;
+font-family: arial;
+font-weight: bolder;
+ background-color: rgba(0, 0, 0, 0.8);
+}
+#reset:hover{
+background-color: #ddd;
+transition: scale(2);
+font-size: 15px;
+font-size: 15px;
+font-family: arial;
+font-weight: bolder;	
+}
+
+/*0000000*/
+.every{
+	font-size: 4rem;
+}
+
+/*lapcontainer*/
+#lapcontainer{
+	background-color: pink;
+	width: 8%;
+	transition: all 1.5s ease;
+	margin-left: 23%;
+	margin-top: -24%;
+
+}
+#lapcontainer:hover{
+background-color:#AB491D;
+transition: scale(2);
+font-size: 15px;
+font-size: 15px;
+font-family: arial;
+font-weight: bolder;
+}
+#baba{
+	background-color: pink;
+	height: 16rem;
+	width: 40%;
+	margin-left: 33%;
+	margin-top: 10%;
+	border-bottom: #ab491d 3px solid;
+}
